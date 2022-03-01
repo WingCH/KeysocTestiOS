@@ -8,7 +8,6 @@
 import XCTest
 
 class KeysocCodingTestUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

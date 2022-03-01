@@ -5,11 +5,10 @@
 //  Created by Wing on 1/3/2022.
 //
 
-import XCTest
 @testable import KeysocCodingTest
+import XCTest
 
 class KeysocCodingTestTests: XCTestCase {
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -32,5 +31,4 @@ class KeysocCodingTestTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
