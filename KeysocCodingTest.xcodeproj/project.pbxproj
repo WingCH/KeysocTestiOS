@@ -13,10 +13,10 @@
 		0E46953727CDFDFC002459B1 /* KeysocCodingTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46953627CDFDFC002459B1 /* KeysocCodingTestTests.swift */; };
 		0E46954127CDFDFC002459B1 /* KeysocCodingTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46954027CDFDFC002459B1 /* KeysocCodingTestUITests.swift */; };
 		0E46954327CDFDFC002459B1 /* KeysocCodingTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46954227CDFDFC002459B1 /* KeysocCodingTestUITestsLaunchTests.swift */; };
-		0E46955327CDFFCA002459B1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46955127CDFFCA002459B1 /* SearchViewController.swift */; };
-		0E46955427CDFFCA002459B1 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E46955227CDFFCA002459B1 /* SearchViewController.xib */; };
 		0E46955827CE06B5002459B1 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46955627CE06B5002459B1 /* BookmarkViewController.swift */; };
 		0E46955927CE06B5002459B1 /* BookmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E46955727CE06B5002459B1 /* BookmarkViewController.xib */; };
+		0E46956027CE10A0002459B1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46955E27CE10A0002459B1 /* SearchViewController.swift */; };
+		0E46956127CE10A0002459B1 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E46955F27CE10A0002459B1 /* SearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +47,10 @@
 		0E46953C27CDFDFC002459B1 /* KeysocCodingTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeysocCodingTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E46954027CDFDFC002459B1 /* KeysocCodingTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysocCodingTestUITests.swift; sourceTree = "<group>"; };
 		0E46954227CDFDFC002459B1 /* KeysocCodingTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysocCodingTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0E46955127CDFFCA002459B1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		0E46955227CDFFCA002459B1 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		0E46955627CE06B5002459B1 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		0E46955727CE06B5002459B1 /* BookmarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkViewController.xib; sourceTree = "<group>"; };
+		0E46955E27CE10A0002459B1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0E46955F27CE10A0002459B1 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +139,8 @@
 		0E46955027CDFF68002459B1 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				0E46955127CDFFCA002459B1 /* SearchViewController.swift */,
-				0E46955227CDFFCA002459B1 /* SearchViewController.xib */,
+				0E46955E27CE10A0002459B1 /* SearchViewController.swift */,
+				0E46955F27CE10A0002459B1 /* SearchViewController.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -260,8 +260,8 @@
 			files = (
 				0E46955927CE06B5002459B1 /* BookmarkViewController.xib in Resources */,
 				0E46952C27CDFDFC002459B1 /* LaunchScreen.storyboard in Resources */,
+				0E46956127CE10A0002459B1 /* SearchViewController.xib in Resources */,
 				0E46952927CDFDFC002459B1 /* Assets.xcassets in Resources */,
-				0E46955427CDFFCA002459B1 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E46956027CE10A0002459B1 /* SearchViewController.swift in Sources */,
 				0E46952027CDFDFB002459B1 /* AppDelegate.swift in Sources */,
 				0E46955827CE06B5002459B1 /* BookmarkViewController.swift in Sources */,
-				0E46955327CDFFCA002459B1 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
