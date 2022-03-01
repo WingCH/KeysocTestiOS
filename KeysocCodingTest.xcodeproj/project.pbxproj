@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0E46952027CDFDFB002459B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46951F27CDFDFB002459B1 /* AppDelegate.swift */; };
-		0E46952227CDFDFB002459B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46952127CDFDFB002459B1 /* SceneDelegate.swift */; };
-		0E46952427CDFDFB002459B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46952327CDFDFB002459B1 /* ViewController.swift */; };
-		0E46952727CDFDFB002459B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E46952527CDFDFB002459B1 /* Main.storyboard */; };
 		0E46952927CDFDFC002459B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E46952827CDFDFC002459B1 /* Assets.xcassets */; };
 		0E46952C27CDFDFC002459B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E46952A27CDFDFC002459B1 /* LaunchScreen.storyboard */; };
 		0E46953727CDFDFC002459B1 /* KeysocCodingTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46953627CDFDFC002459B1 /* KeysocCodingTestTests.swift */; };
 		0E46954127CDFDFC002459B1 /* KeysocCodingTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46954027CDFDFC002459B1 /* KeysocCodingTestUITests.swift */; };
 		0E46954327CDFDFC002459B1 /* KeysocCodingTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46954227CDFDFC002459B1 /* KeysocCodingTestUITestsLaunchTests.swift */; };
+		0E46955327CDFFCA002459B1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46955127CDFFCA002459B1 /* SearchViewController.swift */; };
+		0E46955427CDFFCA002459B1 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E46955227CDFFCA002459B1 /* SearchViewController.xib */; };
+		0E46955827CE06B5002459B1 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46955627CE06B5002459B1 /* BookmarkViewController.swift */; };
+		0E46955927CE06B5002459B1 /* BookmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E46955727CE06B5002459B1 /* BookmarkViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +39,6 @@
 /* Begin PBXFileReference section */
 		0E46951C27CDFDFB002459B1 /* KeysocCodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeysocCodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E46951F27CDFDFB002459B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E46952127CDFDFB002459B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0E46952327CDFDFB002459B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0E46952627CDFDFB002459B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E46952827CDFDFC002459B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E46952B27CDFDFC002459B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E46952D27CDFDFC002459B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +47,10 @@
 		0E46953C27CDFDFC002459B1 /* KeysocCodingTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeysocCodingTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E46954027CDFDFC002459B1 /* KeysocCodingTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysocCodingTestUITests.swift; sourceTree = "<group>"; };
 		0E46954227CDFDFC002459B1 /* KeysocCodingTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysocCodingTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0E46955127CDFFCA002459B1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0E46955227CDFFCA002459B1 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		0E46955627CE06B5002459B1 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		0E46955727CE06B5002459B1 /* BookmarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +101,8 @@
 		0E46951E27CDFDFB002459B1 /* KeysocCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				0E46954F27CDFF63002459B1 /* Features */,
 				0E46951F27CDFDFB002459B1 /* AppDelegate.swift */,
-				0E46952127CDFDFB002459B1 /* SceneDelegate.swift */,
-				0E46952327CDFDFB002459B1 /* ViewController.swift */,
-				0E46952527CDFDFB002459B1 /* Main.storyboard */,
 				0E46952827CDFDFC002459B1 /* Assets.xcassets */,
 				0E46952A27CDFDFC002459B1 /* LaunchScreen.storyboard */,
 				0E46952D27CDFDFC002459B1 /* Info.plist */,
@@ -125,6 +125,33 @@
 				0E46954227CDFDFC002459B1 /* KeysocCodingTestUITestsLaunchTests.swift */,
 			);
 			path = KeysocCodingTestUITests;
+			sourceTree = "<group>";
+		};
+		0E46954F27CDFF63002459B1 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0E46955027CDFF68002459B1 /* Search */,
+				0E46955527CE068C002459B1 /* Bookmark */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0E46955027CDFF68002459B1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0E46955127CDFFCA002459B1 /* SearchViewController.swift */,
+				0E46955227CDFFCA002459B1 /* SearchViewController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0E46955527CE068C002459B1 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				0E46955627CE06B5002459B1 /* BookmarkViewController.swift */,
+				0E46955727CE06B5002459B1 /* BookmarkViewController.xib */,
+			);
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E46955927CE06B5002459B1 /* BookmarkViewController.xib in Resources */,
 				0E46952C27CDFDFC002459B1 /* LaunchScreen.storyboard in Resources */,
 				0E46952927CDFDFC002459B1 /* Assets.xcassets in Resources */,
-				0E46952727CDFDFB002459B1 /* Main.storyboard in Resources */,
+				0E46955427CDFFCA002459B1 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E46952427CDFDFB002459B1 /* ViewController.swift in Sources */,
 				0E46952027CDFDFB002459B1 /* AppDelegate.swift in Sources */,
-				0E46952227CDFDFB002459B1 /* SceneDelegate.swift in Sources */,
+				0E46955827CE06B5002459B1 /* BookmarkViewController.swift in Sources */,
+				0E46955327CDFFCA002459B1 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0E46952527CDFDFB002459B1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E46952627CDFDFB002459B1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0E46952A27CDFDFC002459B1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -367,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -443,9 +463,9 @@
 				INFOPLIST_FILE = KeysocCodingTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,9 +490,9 @@
 				INFOPLIST_FILE = KeysocCodingTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
