@@ -18,6 +18,9 @@
 		0E46955927CE06B5002459B1 /* BookmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E46955727CE06B5002459B1 /* BookmarkViewController.xib */; };
 		0E46956027CE10A0002459B1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46955E27CE10A0002459B1 /* SearchViewController.swift */; };
 		0E46956127CE10A0002459B1 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E46955F27CE10A0002459B1 /* SearchViewController.xib */; };
+		0E46956527CE236D002459B1 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46956327CE236D002459B1 /* AlbumCell.swift */; };
+		0E46956627CE236D002459B1 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E46956427CE236D002459B1 /* AlbumCell.xib */; };
+		0E46956827CE2BE0002459B1 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46956727CE2BE0002459B1 /* SearchViewModel.swift */; };
 		3B9F8E4C463CC968F2533E87 /* Pods_KeysocCodingTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0770EE6E554BAB7F63F9C385 /* Pods_KeysocCodingTestTests.framework */; };
 		EB0B969CD4F19B4C0CCB9112 /* Pods_KeysocCodingTest_KeysocCodingTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070B3E7303A21839523E8ED /* Pods_KeysocCodingTest_KeysocCodingTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		0E46955727CE06B5002459B1 /* BookmarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkViewController.xib; sourceTree = "<group>"; };
 		0E46955E27CE10A0002459B1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0E46955F27CE10A0002459B1 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		0E46956327CE236D002459B1 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		0E46956427CE236D002459B1 /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
+		0E46956727CE2BE0002459B1 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		6F5754C738BF979E9F725D5E /* Pods-KeysocCodingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeysocCodingTest.debug.xcconfig"; path = "Target Support Files/Pods-KeysocCodingTest/Pods-KeysocCodingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		7DCD6D2E573EE251257F4075 /* Pods-KeysocCodingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeysocCodingTest.release.xcconfig"; path = "Target Support Files/Pods-KeysocCodingTest/Pods-KeysocCodingTest.release.xcconfig"; sourceTree = "<group>"; };
 		D1CBFD23CF3A2B32AF21D3C6 /* Pods-KeysocCodingTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeysocCodingTestTests.release.xcconfig"; path = "Target Support Files/Pods-KeysocCodingTestTests/Pods-KeysocCodingTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 		0E46954F27CDFF63002459B1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				0E46956227CE2334002459B1 /* AlbumCell */,
 				0E46955027CDFF68002459B1 /* Search */,
 				0E46955527CE068C002459B1 /* Bookmark */,
 			);
@@ -158,6 +165,7 @@
 			children = (
 				0E46955E27CE10A0002459B1 /* SearchViewController.swift */,
 				0E46955F27CE10A0002459B1 /* SearchViewController.xib */,
+				0E46956727CE2BE0002459B1 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -171,6 +179,15 @@
 			path = Bookmark;
 			sourceTree = "<group>";
 		};
+		0E46956227CE2334002459B1 /* AlbumCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E46956327CE236D002459B1 /* AlbumCell.swift */,
+				0E46956427CE236D002459B1 /* AlbumCell.xib */,
+			);
+			path = AlbumCell;
+			sourceTree = "<group>";
+		};
 		54F6F8166F5431039C4B4CB6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +198,6 @@
 				DEC95E4BAEDFD329CC16400C /* Pods-KeysocCodingTestTests.debug.xcconfig */,
 				D1CBFD23CF3A2B32AF21D3C6 /* Pods-KeysocCodingTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -306,6 +322,7 @@
 			files = (
 				0E46955927CE06B5002459B1 /* BookmarkViewController.xib in Resources */,
 				0E46952C27CDFDFC002459B1 /* LaunchScreen.storyboard in Resources */,
+				0E46956627CE236D002459B1 /* AlbumCell.xib in Resources */,
 				0E46956127CE10A0002459B1 /* SearchViewController.xib in Resources */,
 				0E46952927CDFDFC002459B1 /* Assets.xcassets in Resources */,
 			);
@@ -436,8 +453,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E46956027CE10A0002459B1 /* SearchViewController.swift in Sources */,
+				0E46956827CE2BE0002459B1 /* SearchViewModel.swift in Sources */,
 				0E46952027CDFDFB002459B1 /* AppDelegate.swift in Sources */,
 				0E46955827CE06B5002459B1 /* BookmarkViewController.swift in Sources */,
+				0E46956527CE236D002459B1 /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

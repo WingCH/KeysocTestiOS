@@ -8,6 +8,7 @@ target 'KeysocCodingTest' do
   # Pods for KeysocCodingTest
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
+  pod 'Kingfisher', '~> 7.0'
 
   target 'KeysocCodingTestTests' do
     inherit! :search_paths
