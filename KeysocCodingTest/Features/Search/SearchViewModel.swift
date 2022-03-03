@@ -16,7 +16,7 @@ class SearchViewModel {
     // -- output end--
 
     // -- dependency start--
-    let networkManager: NetworkManager
+    let itunesRepository: ItunesRepository
     let bookmarkRepository: BookmarkRepository
     // -- dependency end--
 
@@ -27,11 +27,11 @@ class SearchViewModel {
 
     init(
         dependency: (
-            networkManager: NetworkManager,
+            itunesRepository: ItunesRepository,
             bookmarkRepository: BookmarkRepository
         )
     ) {
-        self.networkManager = dependency.networkManager
+        self.itunesRepository = dependency.itunesRepository
         self.bookmarkRepository = dependency.bookmarkRepository
 
         // MARK: Call itunes api when search bar input text
@@ -68,7 +68,7 @@ class SearchViewModel {
     }
 
     private func getAlnumsFromItunes(newSearchKey: String) {
-        networkManager.getAlbum(term: newSearchKey, entity: "album")
+        itunesRepository.getAlbum(term: newSearchKey, entity: "album")
             .subscribe { respose in
                 print("onSuccess: \(respose)")
                 self.searchedAlbums.accept(respose.results)

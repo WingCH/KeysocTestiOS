@@ -5,6 +5,7 @@
 //  Created by Wing on 1/3/2022.
 //
 
+import Moya
 import UIKit
 
 @main
@@ -15,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
 
         // MARK: Dependency
-        let networkManager = NetworkManager(requestTimeOut: 30)
+        let itunesRepository: ItunesRepository = RemoteItunesRepository(
+            provider: MoyaProvider<ItunesAPI>()
+        )
         let bookmarkRepository = LocalBookmarkRepository()
 
         // MARK: Root tabbar
@@ -24,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: Setup SearchView
         let searchViewModel = SearchViewModel(
             dependency: (
-                networkManager: networkManager,
+                itunesRepository: itunesRepository,
                 bookmarkRepository: bookmarkRepository
             )
         )
