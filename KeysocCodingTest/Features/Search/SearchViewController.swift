@@ -14,6 +14,7 @@ class SearchViewController: UIViewController {
     private var searchController: UISearchController?
 
     let disposeBag = DisposeBag()
+    var viewModel: SearchViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,18 @@ class SearchViewController: UIViewController {
         setSearchBar()
         setTableView()
 
-        let viewModel = SearchViewModel(
+        viewModel = SearchViewModel(
             searchText: searchController!.searchBar.rx.text.orEmpty.asDriver().throttle(.milliseconds(300))
         )
 
-        viewModel.albums.asDriver(onErrorJustReturn: [])
+        viewModel!.albums.asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(cellIdentifier: "albumCell", cellType: AlbumCell.self)) { _, value, cell in
-                cell.collectionNameLabel.text = value
-                cell.setImage(
-                    imageUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/09/61/22/0961224e-34b2-87c5-188b-7a87ac90cf62/source/100x100bb.jpg"
-                )
+                cell.collectionNameLabel.text = value.collectionName
+                if let imageUrl = value.artworkUrl100 {
+                    cell.setImage(
+                        imageUrl: imageUrl
+                    )
+                }
             }
             .disposed(by: disposeBag)
     }
@@ -46,38 +49,12 @@ class SearchViewController: UIViewController {
         tableView
             .rx.setDelegate(self)
             .disposed(by: disposeBag)
+
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                print(indexPath)
+            }).disposed(by: disposeBag)
     }
-
-    private func binding() {
-//        let searchResults: Observable<[String]>? = searchController?.searchBar.rx.text.orEmpty
-//            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
-//            .distinctUntilChanged()
-//            .flatMapLatest { query -> Observable<[String]> in
-//                if query.isEmpty {
-//                    return .just([])
-//                }
-        ////                return searchGitHub(query)
-        ////                    .catchAndReturn([])
-//
-//                return Observable.just([
-//                    "文本输入框的用法",
-//                    "开关按钮的用法",
-//                    "进度条的用法",
-//                    "文本标签的用法",
-//                ])
-//            }
-//            .observe(on: MainScheduler.instance)
-    }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
 }
 
 extension SearchViewController: UITableViewDelegate {

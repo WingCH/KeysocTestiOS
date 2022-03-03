@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0E13E7B12DE5D67CC1A031E1 /* Pods_KeysocCodingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48D3A1EB180624A15855B42 /* Pods_KeysocCodingTest.framework */; };
+		0E249DE527CF716600FB0CA8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E249DE427CF716600FB0CA8 /* NetworkManager.swift */; };
+		0E249DE827CF731800FB0CA8 /* ItunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E249DE727CF731800FB0CA8 /* ItunesAPI.swift */; };
+		0E249DEB27CF7B8A00FB0CA8 /* ItunesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E249DEA27CF7B8A00FB0CA8 /* ItunesSearchResponse.swift */; };
 		0E46952027CDFDFB002459B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46951F27CDFDFB002459B1 /* AppDelegate.swift */; };
 		0E46952927CDFDFC002459B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E46952827CDFDFC002459B1 /* Assets.xcassets */; };
 		0E46952C27CDFDFC002459B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E46952A27CDFDFC002459B1 /* LaunchScreen.storyboard */; };
@@ -21,6 +24,8 @@
 		0E46956527CE236D002459B1 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46956327CE236D002459B1 /* AlbumCell.swift */; };
 		0E46956627CE236D002459B1 /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E46956427CE236D002459B1 /* AlbumCell.xib */; };
 		0E46956827CE2BE0002459B1 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46956727CE2BE0002459B1 /* SearchViewModel.swift */; };
+		0E735CD827CFA207004EAF91 /* BookmarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E735CD727CFA207004EAF91 /* BookmarkRepository.swift */; };
+		0E735CDA27CFA78E004EAF91 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E735CD927CFA78E004EAF91 /* BookmarkViewModel.swift */; };
 		3B9F8E4C463CC968F2533E87 /* Pods_KeysocCodingTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0770EE6E554BAB7F63F9C385 /* Pods_KeysocCodingTestTests.framework */; };
 		EB0B969CD4F19B4C0CCB9112 /* Pods_KeysocCodingTest_KeysocCodingTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070B3E7303A21839523E8ED /* Pods_KeysocCodingTest_KeysocCodingTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +50,9 @@
 /* Begin PBXFileReference section */
 		0070B3E7303A21839523E8ED /* Pods_KeysocCodingTest_KeysocCodingTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeysocCodingTest_KeysocCodingTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0770EE6E554BAB7F63F9C385 /* Pods_KeysocCodingTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeysocCodingTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E249DE427CF716600FB0CA8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0E249DE727CF731800FB0CA8 /* ItunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesAPI.swift; sourceTree = "<group>"; };
+		0E249DEA27CF7B8A00FB0CA8 /* ItunesSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchResponse.swift; sourceTree = "<group>"; };
 		0E46951C27CDFDFB002459B1 /* KeysocCodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeysocCodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E46951F27CDFDFB002459B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E46952827CDFDFC002459B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +70,8 @@
 		0E46956327CE236D002459B1 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		0E46956427CE236D002459B1 /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		0E46956727CE2BE0002459B1 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		0E735CD727CFA207004EAF91 /* BookmarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRepository.swift; sourceTree = "<group>"; };
+		0E735CD927CFA78E004EAF91 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		6F5754C738BF979E9F725D5E /* Pods-KeysocCodingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeysocCodingTest.debug.xcconfig"; path = "Target Support Files/Pods-KeysocCodingTest/Pods-KeysocCodingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		7DCD6D2E573EE251257F4075 /* Pods-KeysocCodingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeysocCodingTest.release.xcconfig"; path = "Target Support Files/Pods-KeysocCodingTest/Pods-KeysocCodingTest.release.xcconfig"; sourceTree = "<group>"; };
 		D1CBFD23CF3A2B32AF21D3C6 /* Pods-KeysocCodingTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeysocCodingTestTests.release.xcconfig"; path = "Target Support Files/Pods-KeysocCodingTestTests/Pods-KeysocCodingTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,12 +109,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E249DE327CF707300FB0CA8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0E735CD627CFA1DB004EAF91 /* Repository */,
+				0E249DE627CF716B00FB0CA8 /* NetworkManager */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0E249DE627CF716B00FB0CA8 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				0E249DE927CF7B3D00FB0CA8 /* Models */,
+				0E249DE427CF716600FB0CA8 /* NetworkManager.swift */,
+				0E249DE727CF731800FB0CA8 /* ItunesAPI.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		0E249DE927CF7B3D00FB0CA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E249DEA27CF7B8A00FB0CA8 /* ItunesSearchResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0E46951327CDFDFB002459B1 = {
 			isa = PBXGroup;
 			children = (
 				0E46951E27CDFDFB002459B1 /* KeysocCodingTest */,
 				0E46953527CDFDFC002459B1 /* KeysocCodingTestTests */,
-				0E46953F27CDFDFC002459B1 /* KeysocCodingTestUITests */,
 				0E46951D27CDFDFB002459B1 /* Products */,
 				54F6F8166F5431039C4B4CB6 /* Pods */,
 				AC778D38DD1F3423024970C8 /* Frameworks */,
@@ -124,9 +160,11 @@
 		0E46951E27CDFDFB002459B1 /* KeysocCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				0E249DE327CF707300FB0CA8 /* Services */,
 				0E46954F27CDFF63002459B1 /* Features */,
 				0E46951F27CDFDFB002459B1 /* AppDelegate.swift */,
 				0E46952827CDFDFC002459B1 /* Assets.xcassets */,
+				0E46953F27CDFDFC002459B1 /* KeysocCodingTestUITests */,
 				0E46952A27CDFDFC002459B1 /* LaunchScreen.storyboard */,
 				0E46952D27CDFDFC002459B1 /* Info.plist */,
 			);
@@ -175,6 +213,7 @@
 			children = (
 				0E46955627CE06B5002459B1 /* BookmarkViewController.swift */,
 				0E46955727CE06B5002459B1 /* BookmarkViewController.xib */,
+				0E735CD927CFA78E004EAF91 /* BookmarkViewModel.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -186,6 +225,14 @@
 				0E46956427CE236D002459B1 /* AlbumCell.xib */,
 			);
 			path = AlbumCell;
+			sourceTree = "<group>";
+		};
+		0E735CD627CFA1DB004EAF91 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0E735CD727CFA207004EAF91 /* BookmarkRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		54F6F8166F5431039C4B4CB6 /* Pods */ = {
@@ -452,9 +499,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E249DE527CF716600FB0CA8 /* NetworkManager.swift in Sources */,
+				0E735CD827CFA207004EAF91 /* BookmarkRepository.swift in Sources */,
 				0E46956027CE10A0002459B1 /* SearchViewController.swift in Sources */,
+				0E249DEB27CF7B8A00FB0CA8 /* ItunesSearchResponse.swift in Sources */,
 				0E46956827CE2BE0002459B1 /* SearchViewModel.swift in Sources */,
 				0E46952027CDFDFB002459B1 /* AppDelegate.swift in Sources */,
+				0E735CDA27CFA78E004EAF91 /* BookmarkViewModel.swift in Sources */,
+				0E249DE827CF731800FB0CA8 /* ItunesAPI.swift in Sources */,
 				0E46955827CE06B5002459B1 /* BookmarkViewController.swift in Sources */,
 				0E46956527CE236D002459B1 /* AlbumCell.swift in Sources */,
 			);
