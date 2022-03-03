@@ -25,7 +25,6 @@ class BookmarkViewModel {
         self.bookmarkRepository = bookmarkRepository
 
         bookmarkRepository.albums.subscribe { bookmarkedAlbums in
-            print("onNext: \(bookmarkedAlbums)")
             let cellModels = bookmarkedAlbums.map { albums in
                 AlbumCellModel(album: albums, isBookmarked: true)
             }

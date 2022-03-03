@@ -31,21 +31,24 @@ class SearchViewModel {
             bookmarkRepository: BookmarkRepository
         )
     ) {
-        self.itunesRepository = dependency.itunesRepository
-        self.bookmarkRepository = dependency.bookmarkRepository
+        itunesRepository = dependency.itunesRepository
+        bookmarkRepository = dependency.bookmarkRepository
 
         // MARK: Call itunes api when search bar input text
-
-        searchBarTextObserver.subscribe { newSearchKey in
-            print("searchBarTextObserver onNext: \(newSearchKey)")
-            self.getAlnumsFromItunes(newSearchKey: newSearchKey)
-        } onError: { error in
-            print("onError: \(error)")
-        } onCompleted: {
-            print("onCompleted")
-        } onDisposed: {
-            print("onDisposed")
-        }.disposed(by: disposeBag)
+        searchBarTextObserver
+            .filter {
+                !$0.isEmpty
+            }
+            .debug("searchBarTextObserver")
+            .subscribe { newSearchKey in
+                self.getAlnumsFromItunes(newSearchKey: newSearchKey)
+            } onError: { error in
+                print("onError: \(error)")
+            } onCompleted: {
+                print("onCompleted")
+            } onDisposed: {
+                print("onDisposed")
+            }.disposed(by: disposeBag)
 
         Observable.combineLatest(searchedAlbums, bookmarkRepository.albums) { albums, bookmarkedAlbums in
             albums.map { album in
@@ -70,12 +73,9 @@ class SearchViewModel {
     private func getAlnumsFromItunes(newSearchKey: String) {
         itunesRepository.getAlbum(term: newSearchKey, entity: "album")
             .subscribe { respose in
-                print("onSuccess: \(respose)")
                 self.searchedAlbums.accept(respose.results)
             } onError: { error in
-                print("onError: \(error)")
-            } onDisposed: {
-                print("onDisposed")
+                print("ItunesRepository onError: \(error)")
             }.disposed(by: disposeBag)
     }
 

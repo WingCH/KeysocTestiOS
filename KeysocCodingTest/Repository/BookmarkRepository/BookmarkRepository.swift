@@ -30,14 +30,7 @@ class LocalBookmarkRepository: BookmarkRepository {
         }
 
         albums.asObservable().subscribe { list in
-            print("bookmarkedAlbums onNext: \(list)")
             self.writeToUserDefaults(list)
-        } onError: { error in
-            print("bookmarkedAlbums onError: \(error)")
-        } onCompleted: {
-            print("bookmarkedAlbums onCompleted")
-        } onDisposed: {
-            print("bookmarkedAlbums onDisposed")
         }.disposed(by: disposeBag)
     }
 

@@ -32,6 +32,7 @@ class BookmarkViewController: UIViewController {
     }
 
     private func configUI() {
+        self.title = "Albums"
         setTableView()
     }
 

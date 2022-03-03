@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="KeysocCodingTest" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="32w-V9-lM5" id="Vab-S0-XPK"/>
+                <outlet property="exampleButton" destination="MfE-x8-Msc" id="1CR-qe-ZWC"/>
                 <outlet property="tableView" destination="10p-EI-7cT" id="IA2-Qr-Zz1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,11 +26,29 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="32w-V9-lM5">
+                    <rect key="frame" x="154.5" y="422.5" width="105" height="51.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXG-xg-8ra">
+                            <rect key="frame" x="19" y="0.0" width="67" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfE-x8-Msc">
+                            <rect key="frame" x="0.0" y="20.5" width="105" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="jack johnson"/>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="32w-V9-lM5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0vt-v9-Xvl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="10p-EI-7cT" secondAttribute="bottom" id="HNk-md-O0m"/>
+                <constraint firstItem="32w-V9-lM5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Lib-fe-soQ"/>
                 <constraint firstItem="10p-EI-7cT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YMV-uk-DpC"/>
                 <constraint firstItem="10p-EI-7cT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="j28-Mt-USb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="10p-EI-7cT" secondAttribute="trailing" id="l07-Jc-P3r"/>

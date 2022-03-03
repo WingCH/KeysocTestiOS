@@ -12,6 +12,8 @@ import UIKit
 class SearchViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     private var searchController: UISearchController?
+    @IBOutlet var emptyView: UIStackView!
+    @IBOutlet var exampleButton: UIButton!
 
     let disposeBag = DisposeBag()
     let viewModel: SearchViewModel
@@ -22,7 +24,7 @@ class SearchViewController: UIViewController {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -35,9 +37,18 @@ class SearchViewController: UIViewController {
     private func configUI() {
         setSearchBar()
         setTableView()
+        exampleButton.rx.tap.asDriver().drive { [weak self] _ in
+            if let exampleSearchKey = self?.exampleButton.titleLabel?.text {
+                self?.viewModel.searchBarTextObserver.onNext(exampleSearchKey)
+            }
+        }.disposed(by: disposeBag)
     }
 
     private func bindViewModel() {
+        viewModel.searchBarTextObserver.asObserver()
+            .bind(to: searchController!.searchBar.rx.text)
+            .disposed(by: disposeBag)
+
         searchController?.searchBar.rx.text.orEmpty.asDriver().throttle(.microseconds(500))
             .drive(viewModel.searchBarTextObserver)
             .disposed(by: disposeBag)
@@ -46,14 +57,16 @@ class SearchViewController: UIViewController {
             .drive(tableView.rx.items(cellIdentifier: "albumCell", cellType: AlbumCell.self)) { _, model, cell in
                 cell.configure(model: model)
                 cell.collectionPriceButton.rx.tap.asDriver()
-                    .drive { [weak self] in
+                    .drive(onNext: { [weak self] _ in
                         self?.viewModel.onBookedMarkAlbum(cellModel: model)
-                    } onCompleted: {
-                        print("collectionPriceButton onCompleted")
-                    } onDisposed: {
-                        print("collectionPriceButton onDisposed")
-                    }.disposed(by: cell.disposeBag)
+                    }).disposed(by: cell.disposeBag)
             }
+            .disposed(by: disposeBag)
+
+        // MARK: if no data show emptyView
+        viewModel.albumCellModels.asDriver(onErrorJustReturn: [])
+            .map { $0.count != 0 }
+            .drive(emptyView.rx.isHidden)
             .disposed(by: disposeBag)
     }
 
@@ -77,7 +90,7 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 80
     }
 }
