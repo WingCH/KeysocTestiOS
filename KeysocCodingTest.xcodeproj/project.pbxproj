@@ -11,6 +11,7 @@
 		0E249DE527CF716600FB0CA8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E249DE427CF716600FB0CA8 /* NetworkManager.swift */; };
 		0E249DE827CF731800FB0CA8 /* ItunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E249DE727CF731800FB0CA8 /* ItunesAPI.swift */; };
 		0E249DEB27CF7B8A00FB0CA8 /* ItunesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E249DEA27CF7B8A00FB0CA8 /* ItunesSearchResponse.swift */; };
+		0E3B9A6527D044BF00C0E747 /* AlbumCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B9A6427D044BE00C0E747 /* AlbumCellModel.swift */; };
 		0E46952027CDFDFB002459B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E46951F27CDFDFB002459B1 /* AppDelegate.swift */; };
 		0E46952927CDFDFC002459B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E46952827CDFDFC002459B1 /* Assets.xcassets */; };
 		0E46952C27CDFDFC002459B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E46952A27CDFDFC002459B1 /* LaunchScreen.storyboard */; };
@@ -53,6 +54,7 @@
 		0E249DE427CF716600FB0CA8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0E249DE727CF731800FB0CA8 /* ItunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesAPI.swift; sourceTree = "<group>"; };
 		0E249DEA27CF7B8A00FB0CA8 /* ItunesSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchResponse.swift; sourceTree = "<group>"; };
+		0E3B9A6427D044BE00C0E747 /* AlbumCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellModel.swift; sourceTree = "<group>"; };
 		0E46951C27CDFDFB002459B1 /* KeysocCodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeysocCodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E46951F27CDFDFB002459B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E46952827CDFDFC002459B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				0E46956327CE236D002459B1 /* AlbumCell.swift */,
 				0E46956427CE236D002459B1 /* AlbumCell.xib */,
+				0E3B9A6427D044BE00C0E747 /* AlbumCellModel.swift */,
 			);
 			path = AlbumCell;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				0E735CDA27CFA78E004EAF91 /* BookmarkViewModel.swift in Sources */,
 				0E249DE827CF731800FB0CA8 /* ItunesAPI.swift in Sources */,
 				0E46955827CE06B5002459B1 /* BookmarkViewController.swift in Sources */,
+				0E3B9A6527D044BF00C0E747 /* AlbumCellModel.swift in Sources */,
 				0E46956527CE236D002459B1 /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

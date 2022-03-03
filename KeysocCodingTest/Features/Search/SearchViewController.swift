@@ -23,17 +23,20 @@ class SearchViewController: UIViewController {
         setTableView()
 
         viewModel = SearchViewModel(
-            searchText: searchController!.searchBar.rx.text.orEmpty.asDriver().throttle(.milliseconds(300))
+            searchText: searchController!.searchBar.rx.text.orEmpty.asDriver().throttle(.milliseconds(300)), dependency: (networkManager: NetworkManager(requestTimeOut: 30), bookmarkRepository: LocalBookmarkRepository())
         )
 
-        viewModel!.albums.asDriver(onErrorJustReturn: [])
-            .drive(tableView.rx.items(cellIdentifier: "albumCell", cellType: AlbumCell.self)) { _, value, cell in
-                cell.collectionNameLabel.text = value.collectionName
-                if let imageUrl = value.artworkUrl100 {
-                    cell.setImage(
-                        imageUrl: imageUrl
-                    )
-                }
+        viewModel!.albumCellModels.asDriver(onErrorJustReturn: [])
+            .drive(tableView.rx.items(cellIdentifier: "albumCell", cellType: AlbumCell.self)) { _, model, cell in
+                cell.configure(model: model)
+                cell.collectionPriceButton.rx.tap.asDriver()
+                    .drive { [weak self] in
+                        self?.viewModel?.onBookedMarkAlbum(cellModel: model)
+                    } onCompleted: {
+                        print("collectionPriceButton onCompleted")
+                    } onDisposed: {
+                        print("collectionPriceButton onDisposed")
+                    }.disposed(by: cell.disposeBag)
             }
             .disposed(by: disposeBag)
     }
