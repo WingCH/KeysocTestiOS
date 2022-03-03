@@ -24,17 +24,17 @@
                             <constraint firstAttribute="width" constant="60" id="YNc-RQ-etV"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YI1-k5-gWx">
-                        <rect key="frame" x="84" y="87.5" width="41.5" height="49"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YI1-k5-gWx">
+                        <rect key="frame" x="84" y="89" width="295" height="46"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijk-9C-0ZE">
-                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="295" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vy7-cR-1dc">
-                                <rect key="frame" x="0.0" y="28.5" width="41.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vy7-cR-1dc">
+                                <rect key="frame" x="0.0" y="25.5" width="295" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,9 +42,9 @@
                         </subviews>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4N-cs-5pZ">
-                        <rect key="frame" x="378" y="96.5" width="67" height="31"/>
+                        <rect key="frame" x="399" y="97" width="46" height="30"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
                     </button>
                 </subviews>
                 <constraints>
@@ -54,7 +54,7 @@
                     <constraint firstItem="6TA-5c-pra" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Jlj-es-yuy"/>
                     <constraint firstItem="YI1-k5-gWx" firstAttribute="leading" secondItem="6TA-5c-pra" secondAttribute="trailing" constant="8" symbolic="YES" id="LXN-pm-7DP"/>
                     <constraint firstItem="YI1-k5-gWx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VKl-n5-fgf"/>
-                    <constraint firstItem="R4N-cs-5pZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YI1-k5-gWx" secondAttribute="trailing" constant="10" id="sDw-aT-6gb"/>
+                    <constraint firstItem="R4N-cs-5pZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YI1-k5-gWx" secondAttribute="trailing" constant="20" id="sDw-aT-6gb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

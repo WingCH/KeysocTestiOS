@@ -28,12 +28,10 @@ class AlbumCell: UITableViewCell {
         super.awakeFromNib()
         artworkImageView.backgroundColor = .gray
         selectionStyle = .none
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        collectionNameLabel.numberOfLines = 2
+        artistNameLabel.font = UIFont.systemFont(ofSize: 12.0, weight: .regular)
+        artistNameLabel.textColor = .gray
+        collectionPriceButton.setTitle("", for: .normal)
     }
 
     func configure(model: AlbumCellModel) {
@@ -42,9 +40,9 @@ class AlbumCell: UITableViewCell {
         artistNameLabel.text = model.album.artistName
 
         if model.isBookmarked {
-            backgroundColor = .red
+            collectionPriceButton.setImage(UIImage(named: "bookmark.fill"), for: .normal)
         } else {
-            backgroundColor = .gray
+            collectionPriceButton.setImage(UIImage(named: "bookmark"), for: .normal)
         }
     }
 
