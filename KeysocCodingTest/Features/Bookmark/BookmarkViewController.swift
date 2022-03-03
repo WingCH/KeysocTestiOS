@@ -10,11 +10,20 @@ import RxSwift
 import UIKit
 
 class BookmarkViewController: UIViewController {
-    var viewModel: BookmarkViewModel?
+    let viewModel: BookmarkViewModel
+
+    init(viewModel: BookmarkViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "BookmarkViewController", bundle: Bundle(for: BookmarkViewModel.self))
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = BookmarkViewModel()
         // Do any additional setup after loading the view.
     }
 
