@@ -10,6 +10,9 @@ import RxSwift
 import UIKit
 
 class BookmarkViewController: UIViewController {
+    @IBOutlet var tableView: UITableView!
+
+    let disposeBag = DisposeBag()
     let viewModel: BookmarkViewModel
 
     init(viewModel: BookmarkViewModel) {
@@ -18,22 +21,53 @@ class BookmarkViewController: UIViewController {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configUI()
+        bindViewModel()
     }
 
-    /*
-     // MARK: - Navigation
+    private func configUI() {
+        setTableView()
+    }
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    private func setTableView() {
+        tableView.register(UINib(nibName: "AlbumCell", bundle: nil), forCellReuseIdentifier: "albumCell")
+        tableView
+            .rx.setDelegate(self)
+            .disposed(by: disposeBag)
+
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                print(indexPath)
+                
+            }).disposed(by: disposeBag)
+    }
+
+    private func bindViewModel() {
+        
+        viewModel.albumCellModels.asDriver(onErrorJustReturn: [])
+            .drive(tableView.rx.items(cellIdentifier: "albumCell", cellType: AlbumCell.self)) { _, model, cell in
+                cell.configure(model: model)
+                cell.collectionPriceButton.rx.tap.asDriver()
+                    .drive { [weak self] in
+                        self?.viewModel.onUnBookMark(cellModel: model)
+                    } onCompleted: {
+                        print("collectionPriceButton onCompleted")
+                    } onDisposed: {
+                        print("collectionPriceButton onDisposed")
+                    }.disposed(by: cell.disposeBag)
+            }
+            .disposed(by: disposeBag)
+    }
+}
+
+extension BookmarkViewController: UITableViewDelegate {
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+        return 80
+    }
 }
