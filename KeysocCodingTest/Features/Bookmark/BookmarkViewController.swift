@@ -32,7 +32,7 @@ class BookmarkViewController: UIViewController {
     }
 
     private func configUI() {
-        self.title = "Albums"
+        title = "Albums"
         setTableView()
     }
 
@@ -41,27 +41,17 @@ class BookmarkViewController: UIViewController {
         tableView
             .rx.setDelegate(self)
             .disposed(by: disposeBag)
-
-        tableView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
-                print(indexPath)
-                
-            }).disposed(by: disposeBag)
     }
 
     private func bindViewModel() {
-        
+        // MARK: bind tableview
         viewModel.albumCellModels.asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(cellIdentifier: "albumCell", cellType: AlbumCell.self)) { _, model, cell in
                 cell.configure(model: model)
                 cell.collectionPriceButton.rx.tap.asDriver()
-                    .drive { [weak self] in
-                        self?.viewModel.onUnBookMark(cellModel: model)
-                    } onCompleted: {
-                        print("collectionPriceButton onCompleted")
-                    } onDisposed: {
-                        print("collectionPriceButton onDisposed")
-                    }.disposed(by: cell.disposeBag)
+                    .drive(onNext: { [weak self] in
+                        self?.viewModel.onUnBookmark(cellModel: model)
+                    }).disposed(by: cell.disposeBag)
             }
             .disposed(by: disposeBag)
     }

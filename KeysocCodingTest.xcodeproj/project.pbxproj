@@ -111,14 +111,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E249DE327CF707300FB0CA8 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				0E735CD627CFA1DB004EAF91 /* Repository */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		0E3B9A6827D0684600C0E747 /* BookmarkRepository */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +153,7 @@
 		0E46951E27CDFDFB002459B1 /* KeysocCodingTest */ = {
 			isa = PBXGroup;
 			children = (
-				0E249DE327CF707300FB0CA8 /* Services */,
+				0E735CD627CFA1DB004EAF91 /* Repository */,
 				0E46954F27CDFF63002459B1 /* Features */,
 				0E46951F27CDFDFB002459B1 /* AppDelegate.swift */,
 				0E46952827CDFDFC002459B1 /* Assets.xcassets */,
@@ -202,9 +194,9 @@
 		0E46955027CDFF68002459B1 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				0E46956727CE2BE0002459B1 /* SearchViewModel.swift */,
 				0E46955E27CE10A0002459B1 /* SearchViewController.swift */,
 				0E46955F27CE10A0002459B1 /* SearchViewController.xib */,
-				0E46956727CE2BE0002459B1 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -212,9 +204,9 @@
 		0E46955527CE068C002459B1 /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
+				0E735CD927CFA78E004EAF91 /* BookmarkViewModel.swift */,
 				0E46955627CE06B5002459B1 /* BookmarkViewController.swift */,
 				0E46955727CE06B5002459B1 /* BookmarkViewController.xib */,
-				0E735CD927CFA78E004EAF91 /* BookmarkViewModel.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";

@@ -15,7 +15,6 @@ class BookmarkViewModel {
     // -- output --
 
     // -- dependency --
-
     let bookmarkRepository: BookmarkRepository
     // -- dependency --
 
@@ -24,21 +23,16 @@ class BookmarkViewModel {
     init(bookmarkRepository: BookmarkRepository) {
         self.bookmarkRepository = bookmarkRepository
 
-        bookmarkRepository.albums.subscribe { bookmarkedAlbums in
-            let cellModels = bookmarkedAlbums.map { albums in
-                AlbumCellModel(album: albums, isBookmarked: true)
-            }
-            self.albumCellModels.accept(cellModels)
-        } onError: { error in
-            print("onError: \(error)")
-        } onCompleted: {
-            print("onCompleted")
-        } onDisposed: {
-            print("onDisposed")
-        }.disposed(by: disposeBag)
+        bookmarkRepository.albums
+            .subscribe(onNext: { bookmarkedAlbums in
+                let cellModels = bookmarkedAlbums.map { albums in
+                    AlbumCellModel(album: albums, isBookmarked: true)
+                }
+                self.albumCellModels.accept(cellModels)
+            }).disposed(by: disposeBag)
     }
 
-    func onUnBookMark(cellModel: AlbumCellModel) {
+    func onUnBookmark(cellModel: AlbumCellModel) {
         if cellModel.isBookmarked {
             bookmarkRepository.remove(cellModel.album)
         } else {

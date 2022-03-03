@@ -27,18 +27,18 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="32w-V9-lM5">
-                    <rect key="frame" x="154.5" y="422.5" width="105" height="51.5"/>
+                    <rect key="frame" x="164" y="423" width="86" height="50.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXG-xg-8ra">
-                            <rect key="frame" x="19" y="0.0" width="67" height="20.5"/>
+                            <rect key="frame" x="9.5" y="0.0" width="67" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfE-x8-Msc">
-                            <rect key="frame" x="0.0" y="20.5" width="105" height="31"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="jack johnson"/>
+                            <rect key="frame" x="0.0" y="20.5" width="86" height="30"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="jack johnson"/>
                         </button>
                     </subviews>
                 </stackView>

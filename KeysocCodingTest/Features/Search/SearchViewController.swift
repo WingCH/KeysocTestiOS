@@ -37,15 +37,11 @@ class SearchViewController: UIViewController {
     private func configUI() {
         setSearchBar()
         setTableView()
-        exampleButton.rx.tap.asDriver().drive { [weak self] _ in
-            if let exampleSearchKey = self?.exampleButton.titleLabel?.text {
-                self?.viewModel.searchBarTextObserver.onNext(exampleSearchKey)
-            }
-        }.disposed(by: disposeBag)
     }
 
     private func bindViewModel() {
-        viewModel.searchBarTextObserver.asObserver()
+        // MARK: bind searchBar bind
+        viewModel.searchBarTextObserver
             .bind(to: searchController!.searchBar.rx.text)
             .disposed(by: disposeBag)
 
@@ -53,6 +49,7 @@ class SearchViewController: UIViewController {
             .drive(viewModel.searchBarTextObserver)
             .disposed(by: disposeBag)
 
+        // MARK: bind tableview
         viewModel.albumCellModels.asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(cellIdentifier: "albumCell", cellType: AlbumCell.self)) { _, model, cell in
                 cell.configure(model: model)
@@ -68,6 +65,12 @@ class SearchViewController: UIViewController {
             .map { $0.count != 0 }
             .drive(emptyView.rx.isHidden)
             .disposed(by: disposeBag)
+
+        exampleButton.rx.tap.asDriver().drive { [weak self] _ in
+            if let exampleSearchKey = self?.exampleButton.titleLabel?.text {
+                self?.viewModel.onClickExampleButton(searchKey: exampleSearchKey)
+            }
+        }.disposed(by: disposeBag)
     }
 
     private func setSearchBar() {
@@ -81,11 +84,6 @@ class SearchViewController: UIViewController {
         tableView
             .rx.setDelegate(self)
             .disposed(by: disposeBag)
-
-        tableView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
-                print(indexPath)
-            }).disposed(by: disposeBag)
     }
 }
 

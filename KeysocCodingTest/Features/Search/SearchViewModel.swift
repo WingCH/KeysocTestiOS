@@ -11,17 +11,17 @@ import RxCocoa
 import RxSwift
 
 class SearchViewModel {
-    // -- output start--
+    // -- output --
     var albumCellModels = BehaviorRelay<[AlbumCellModel]>(value: [])
-    // -- output end--
+    // -- output --
 
-    // -- dependency start--
+    // -- dependency --
     let itunesRepository: ItunesRepository
     let bookmarkRepository: BookmarkRepository
-    // -- dependency end--
+    // -- dependency --
 
     private var searchedAlbums = BehaviorRelay<[ItunesAlbum]>(value: [])
-    var searchBarTextObserver = BehaviorSubject<String>(value: "")
+    var searchBarTextObserver = BehaviorRelay<String>(value: "")
 
     let disposeBag = DisposeBag()
 
@@ -40,34 +40,15 @@ class SearchViewModel {
                 !$0.isEmpty
             }
             .debug("searchBarTextObserver")
-            .subscribe { newSearchKey in
+            .subscribe(onNext: { newSearchKey in
                 self.getAlnumsFromItunes(newSearchKey: newSearchKey)
-            } onError: { error in
-                print("onError: \(error)")
-            } onCompleted: {
-                print("onCompleted")
-            } onDisposed: {
-                print("onDisposed")
-            }.disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
 
         Observable.combineLatest(searchedAlbums, bookmarkRepository.albums) { albums, bookmarkedAlbums in
             albums.map { album in
                 AlbumCellModel(album: album, isBookmarked: bookmarkedAlbums.contains(album))
             }
         }.bind(to: albumCellModels).disposed(by: disposeBag)
-
-        /*
-         debug use
-         albumCellModels.subscribe { cellsData in
-             print("cells onNext: \(cellsData)")
-         } onError: { error in
-             print("cells onError: \(error)")
-         } onCompleted: {
-             print("cells onCompleted")
-         } onDisposed: {
-             print("cells onDisposed")
-         }.disposed(by: disposeBag)
-         */
     }
 
     private func getAlnumsFromItunes(newSearchKey: String) {
@@ -85,5 +66,9 @@ class SearchViewModel {
         } else {
             bookmarkRepository.add(cellModel.album)
         }
+    }
+    
+    func onClickExampleButton(searchKey: String){
+        searchBarTextObserver.accept(searchKey)
     }
 }
