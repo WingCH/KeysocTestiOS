@@ -14,24 +14,40 @@ class SearchViewController: UIViewController {
     private var searchController: UISearchController?
 
     let disposeBag = DisposeBag()
-    var viewModel: SearchViewModel?
+    let viewModel: SearchViewModel
+
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "SearchViewController", bundle: Bundle(for: SearchViewController.self))
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configUI()
+        bindViewModel()
+    }
 
+    private func configUI() {
         setSearchBar()
         setTableView()
+    }
 
-        viewModel = SearchViewModel(
-            searchText: searchController!.searchBar.rx.text.orEmpty.asDriver().throttle(.milliseconds(300)), dependency: (networkManager: NetworkManager(requestTimeOut: 30), bookmarkRepository: LocalBookmarkRepository())
-        )
+    private func bindViewModel() {
+        searchController?.searchBar.rx.text.orEmpty.asDriver().throttle(.microseconds(500))
+            .drive(viewModel.searchBarTextObserver)
+            .disposed(by: disposeBag)
 
-        viewModel!.albumCellModels.asDriver(onErrorJustReturn: [])
+        viewModel.albumCellModels.asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(cellIdentifier: "albumCell", cellType: AlbumCell.self)) { _, model, cell in
                 cell.configure(model: model)
                 cell.collectionPriceButton.rx.tap.asDriver()
                     .drive { [weak self] in
-                        self?.viewModel?.onBookedMarkAlbum(cellModel: model)
+                        self?.viewModel.onBookedMarkAlbum(cellModel: model)
                     } onCompleted: {
                         print("collectionPriceButton onCompleted")
                     } onDisposed: {

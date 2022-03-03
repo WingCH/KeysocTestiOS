@@ -21,11 +21,11 @@ class SearchViewModel {
     // -- dependency end--
 
     private var searchedAlbums = BehaviorRelay<[ItunesAlbum]>(value: [])
+    var searchBarTextObserver = BehaviorSubject<String>(value: "")
 
     let disposeBag = DisposeBag()
 
     init(
-        searchText: Driver<String>,
         dependency: (
             networkManager: NetworkManager,
             bookmarkRepository: BookmarkRepository
@@ -36,9 +36,11 @@ class SearchViewModel {
 
         // MARK: Call itunes api when search bar input text
 
-        searchText.drive { newSearchKey in
-            print("onNext: \(newSearchKey)")
+        searchBarTextObserver.subscribe { newSearchKey in
+            print("searchBarTextObserver onNext: \(newSearchKey)")
             self.getAlnumsFromItunes(newSearchKey: newSearchKey)
+        } onError: { error in
+            print("onError: \(error)")
         } onCompleted: {
             print("onCompleted")
         } onDisposed: {

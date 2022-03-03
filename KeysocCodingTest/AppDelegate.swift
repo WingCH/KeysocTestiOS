@@ -14,9 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
 
+        // MARK: Dependency
+
+        let networkManager = NetworkManager(requestTimeOut: 30)
+        let bookmarkRepository = LocalBookmarkRepository()
+
         let tabBarController = UITabBarController()
 
-        let searchTabNavigationController = UINavigationController(rootViewController: SearchViewController())
+        let searchViewModel = SearchViewModel(
+            dependency: (
+                networkManager: networkManager,
+                bookmarkRepository: bookmarkRepository
+            )
+        )
+        let searchTabNavigationController = UINavigationController(
+            rootViewController: SearchViewController(viewModel: searchViewModel)
+        )
+
         let searchTabItem = UITabBarItem(title: "Search", image: UIImage(named: "search"), tag: 0)
         searchTabNavigationController.tabBarItem = searchTabItem
 
